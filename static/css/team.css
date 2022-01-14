@@ -1,0 +1,79 @@
+html{
+    background: #000000;
+    margin:10rem
+     
+}
+.container{
+    background: #000000;
+    margin: 1rem  3rem 5rem 4rem;
+
+    height: 20rem;
+}
+ 
+.our-team{
+    border-radius: 15px;
+    text-align: center;
+    height: 16em;
+
+}
+.our-team .pic{
+    background: black;
+    padding: 10px;
+    
+    display: inline-block;
+    width: 16rem;
+    height: 20rem;
+    transition: all 0.5s ease 0s;
+  
+}
+.our-team:hover .pic{
+    
+    transform: scale(1.1);
+}
+.pic img{
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+   
+}
+
+.our-team .title{
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    font-size: 20px;
+    margin: 0 0 7px 0;
+    position: relative;
+}
+.our-team .post{
+    color: #17bebb;
+    text-transform: capitalize;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+.our-team .social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.our-team .social li{
+    display: inline-block;
+    margin-right: 5px;
+}
+.our-team .social li a{
+    border-radius: 50%;
+    font-size: 15px;
+    color: #17bebb;
+    border: 1px solid #17bebb;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    transition: all 0.5s ease 0s;
+}
+.our-team:hover .social li a{
+    background: #17bebb;
+    color: #fff;
+}

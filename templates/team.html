@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/team.css' %}">
+
+    <!--font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body style="background: black;">
+    <div class="container">
+        <div class="row">
+            
+                <!-- team section-->
+                   <!--1st member-->
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="{% static 'images/img1.png' %}">
+                    </div>
+                    <h3 class="title">Tanmay Thanvi</h3>
+                    <span class="post">Backend Developer </span>
+                
+                    <!--social icon-->
+                    <ul class="social">
+                        <li><a href="https://www.linkedin.com/in/tanmay-thanvi-8561381a3/" class="fa fa-linkedin"></a></li>
+                 </ul>
+                
+                </div>
+            </div>
+
+            <!--2nd member-->
+
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="{% static 'images/raj.png' %}">
+                    </div>
+                    <h3 class="title">Raj Shende</h3>
+                    <span class="post">Frontend Developer</span>
+                
+                     <!--social Icon-->
+                     <ul class="social">
+                        <li><a href="https://www.linkedin.com/in/raj-shende-350718204/" class="fa fa-linkedin"></a></li>
+                 </ul>
+                
+                </div>
+            </div>
+
+            <!--3rd member-->
+
+            <div class="col-md-4 col-sm-6">
+                <div class="our-team">
+                    <div class="pic">
+                        <img src="{% static 'images/img1.png' %}">
+                    </div>
+                    <h3 class="title">Akshay Bachkar</h3>
+                    <span class="post">Frontend Developer</span>
+
+                     <!--social icon-->
+                     <ul class="social">
+                        <li><a href="https://www.linkedin.com/in/akshay-bachkar-293300203/" class="fa fa-linkedin"></a></li>
+                 </ul>
+                
+                </div>
+            </div>
+
+            <!--4th member-->
+
+
+        </div>
+    </div>
+</body>
+</html>

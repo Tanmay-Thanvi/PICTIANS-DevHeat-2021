@@ -1,0 +1,378 @@
+h1{
+    color: grey;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+}
+
+body{
+    background-color:black;
+}
+section{
+    
+    justify-content: center;
+    align-content: center;
+    
+}
+.containe{
+ 
+    display: flex;
+    flex-direction: row;
+    
+}
+.containe2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content:flex-start;
+    width: 70%;
+    margin-left: 0rem;
+    width: 70rem;
+    height: 45rem;
+    
+}
+.contain1{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 0rem ;
+    width: 30rem;
+    height: 45rem;
+  
+    padding: 0rem;
+    
+    
+}
+.circle{
+    width: 20rem;
+    height:20rem;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 0.5rem white solid;
+    
+}
+.circle text{
+   
+}
+.button-wrapper{
+    margin-top: 2rem;
+    
+
+}
+.button-wrapper button{
+    width: 5rem;
+    height: 5rem;
+    background-color: #e33;
+    border:0.2rem white solid;
+    color: white;
+    border-radius: 2.5rem;
+    margin: auto;
+    
+}
+.button-wrapper button :hover{
+    transform: scaleX(1.2);
+}
+.containe2 h2{
+  color: white;
+  margin-left: 5rem;
+}
+.main-block{
+  width: 60rem;
+  height: 5rem;
+  
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 5rem;
+
+}
+
+.gif {
+  height: 5rem;
+  width: 7rem;
+}
+.gif img{
+  height: 5rem;
+  width: 7rem;
+}
+.block1{
+  color: black;
+  width: 43rem;
+  height: 5rem;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+.block2{
+  color: black;
+  width: 13rem;
+  height: 5rem;
+
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: space-around;
+}
+.block2 button{
+  background-color: rgb(184, 167, 167);
+  border: 0px;
+  margin: 0.2rem 1rem ;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+
+
+.body{
+    background-color:#222;
+}
+
+.nav-link{
+    color: white;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 70px;
+  width: 100%;
+  margin:auto ;
+  background-color: #e33;
+  position: relative;
+  color: white;
+  
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px 10px 10px 20px;
+
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+    margin-left: auto;
+  display: inline;
+  align-content: space-around;
+
+  float: right;
+  font-size: 18px;
+  height: 50px;
+  border-radius: 2rem;
+}
+.nav > .nav-links > ul li a{
+  display: block;
+ 
+  color: #fff;
+  line-height: 40px;
+  font-size: 18px;
+  text-decoration: none;
+
+}
+.nav > .nav-links > ul{
+  padding: 0;
+
+  list-style: none;
+  position: relative;
+  
+
+}
+.nav > .nav-links > ul li{
+  display: inline-block;
+  background-color: #e33;
+  border-radius: 2rem;
+  margin-top: 1rem;
+ 
+  margin-right: 3rem;
+
+
+}
+.nav > .nav-links > ul li:hover{
+  background-color: #e33;
+  
+    border-radius: 5px;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+ nav .nav-links ul a.icon{
+ margin-left: 80px;
+ margin-right: 10px;
+}
+
+ nav .nav-links ul a i{
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 7px;
+  margin-left: 5px;
+}
+
+
+@media (max-width:750px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > ul li a {
+    display: block;
+    width: 100%;
+  }
+
+  /*   */
+
+
+
+    .nav > .nav-links > ul li{
+      display: block;
+      margin-bottom: 20px;
+      padding: 0;
+      background-color: #333;
+
+    }
+    .nav > .nav-links > ul li a{
+        margin-left: 40%;
+    }
+    .nav .nav-links ul a.icon{
+      margin-left: 33%;
+    }
+
+  /*   */
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media  screen and (max-width: 1246px) {
+    html{
+        font-size: 80%;
+    }
+  }
+  @media screen and (max-width: 1138px) {
+    html{
+        font-size: 85%;
+    }
+  }
+  
+  @media screen and (max-width: 998px) {
+    html{
+        font-size:80%;
+    }
+  }
+  @media screen and(max-width: 878px){
+    html{
+        font-size: 80%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    html{
+        font-size:75%;
+    }
+   
+  }
+  @media screen and (max-width: 598px) {
+    html{
+        font-size: 70%;
+    }
+    
+    
+  }
+  @media screen and (max-width: 498px) {
+    html{
+        font-size: 65%;
+    }
+    
+    
+  }
+  @media screen and (max-width:  420px) {
+    html{
+        font-size: 60%;
+    }
+  }
+  @media  screen and (max-width: 348px) {
+    html{
+        font-size: 55%;
+    }
+  }
+  @media  screen and (max-width: 360px) {
+    html{
+        font-size: %;
+        
+        
+    }
+    
+  }
+  

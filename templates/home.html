@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap" rel="stylesheet">
+</head>
+<script>
+    
+var i = 0;
+var txt = "Hi, I am your virtual personal fitness trainer. Lets start our workout session by login."
+var speed = 100; 
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("typewritter").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+</script>
+<style>
+    .alert {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        margin-bottom: 12px;
+        font-size: 16px;
+      }
+      
+      .alert.alert-success {
+        background-color: rgba(227, 253, 235, 1);
+        border-color: rgba(38, 179, 3, 1);
+        color: rgba(60, 118, 61, 1);
+      }
+      
+      .alert.alert-info {
+        background-color: rgba(217, 237, 247, 1);
+        color: rgba(49, 112, 143, 1);
+        border-color: rgba(126, 182, 193, 1);
+      }
+      
+      
+      .alert.alert-warning {
+        background-color: rgba(252, 248, 227, 1);
+        border-color: rgba(177, 161, 129, 1);
+        color: rgba(138, 109, 59, 1);
+      }
+      
+      .alert.alert-error {
+        background-color: rgba(248, 215, 218, 1);
+        border-color: rgba(220, 53, 69, 1);
+        color: rgba(114, 28, 36,1);
+      }
+</style>
+<body onload="typeWriter()">
+    <div class="container-fluid">
+    <div class="navbar">
+        <h1>FitHuman</h1>
+        
+    </div>
+    <div class="new_container">
+        <div class="content">
+            <div>
+                <h3>Hello, I am </h3>
+                <h1><span> FitHuman</span></h1>
+                <h4 id="typewritter"></h4>
+               
+        
+            </div>
+        </div>
+        <div >
+                <div class="wrapper"  >
+                   <div class="title-text">
+                      <div class="title login" style="color: #111;">
+                         Login Form
+                      </div>
+                      <div class="title signup" style="color: #111;">
+                         Signup Form
+                      </div>
+                   </div>
+                   <div class="form-container"  >
+                      <div class="slide-controls">
+                         <input type="radio" name="slide" id="login" checked>
+                         <input type="radio" name="slide" id="signup">
+                         <label for="login" class="slide login">Login</label>
+                         <label for="signup" class="slide signup">Signup</label>
+                         <div class="slider-tab"></div>
+                      </div>
+                      <div class="form-inner">
+                         <form action="{% url 'login' %}" class="login" method="post">
+                             {% csrf_token %}
+                            <div class="field">
+                               <input type="email" name="lemail" placeholder="Email Address" required>
+                            </div>
+                            <div class="field">
+                               <input type="password" name="lpass" placeholder="Password" required>
+                            </div>
+                          
+                            <div class="field btn">
+                               <div class="btn-layer"></div>
+                               <input type="submit" value="Login">
+                            </div>
+                            <br>
+                            {% for i in messages %}
+                            <div class="alert alert-{{i.tags}}" role="alert">{{i}}</div>
+                            {% endfor %}
+                         </form>
+                         <form action="{% url 'signup' %}" class="signup" method="post">
+                            {% csrf_token %}
+                            <div class="field">
+                               <input type="text" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="field">
+                               <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="field">
+                               <input type="password" name="pass" placeholder="password" required>
+                            </div>
+                            <div class="field btn">
+                               <div class="btn-layer"></div>
+                               <input type="submit" value="Signup">
+                            </div>
+                         </form>
+                      </div>
+                   </div>
+                </div>
+            </div>
+    </div>
+    </div>
+<div style="min-height: 20px; width: 100%;background:#111;"></div>
+<div class="about">
+    <div class="cont">
+        
+        <div style="padding-bottom: 100px;">
+            <h1>About</h1>
+            <h3>Gym Trainer</h3>
+            
+            <p>
+               <span style="font-family: 'Kalam'; font-size: 24px;">  " Respect your body, fuel your body, challenge your body, move your body and most of all. love your body. "</span>
+               <br><br>
+               We Know your strugling with lot of time management due which you can't 
+                focus on your health and workout. so we brings a virtual personal fitness trainer.
+                I will help you to maintaine your daily fitness routine and suggest some of the best
+                the best workout to you,  Getting yourself motivated to hit the gym isn't always easy.
+                 As much as you know you need to prioritize your health and fitness goals, 
+                sometimes you need a little extra push to get started on (or finish up) your latest home workout.</p>
+            
+        </div>
+    </div>
+</div>
+<div class="service">
+    <div class="text">
+        <h1>Feature</h1>
+        <div class="box">
+            <div>
+                <ion-icon name="barbell"></ion-icon>
+                <h2>Training</h2>
+                <p>We we provide you trianing on differen workouts and 
+                    help you to be more healthier   
+                    <span></span>                                                           
+                    .</p>
+            </div>
+            <div>
+                <ion-icon name="accessibility"></ion-icon>
+                <h2>Workouts</h2>
+                <p>suggetion of will be 
+                    beneficial for your perform this workout daily and keep
+                    yourself feat.
+                </p>
+            </div>
+            <div style="height: 19rem;">
+               
+                <ion-icon name="alarm"></ion-icon>
+                <h2>Timing</h2>
+                <p>Timing and routine is most important factor during workout
+                    timer will maintaine your workout time.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="photos">
+    <div class="photo">
+        <h1>Fitness</h1>
+        <p> Let glance on some of our user</p>
+        <div class="photo-box">
+            <div>
+            <img class="img" src="{% static 'images/image_1.jpg' %}">
+        </div>
+        <div>
+            <img class="img" src="{% static 'images/image_3.jpg' %}">
+        </div>
+        <div>
+           <img class="img" src="{% static 'images/image_4.jpg' %}">
+        </div>
+    </div>
+    </div>
+
+</div>
+<div class="footer-fluid">
+    <div class="footer">
+        <p>Copyright 2021 - All Right Reserved - Made By <a href="{% url 'team' %}">Team PICTIANS</a></p>
+        <div class="icon">
+            <ion-icon name="logo-facebook"></ion-icon>
+            <ion-icon name="logo-whatsapp"></ion-icon>
+            <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-google"></ion-icon>
+            <ion-icon name="logo-youtube"></ion-icon>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/new.js' %}"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

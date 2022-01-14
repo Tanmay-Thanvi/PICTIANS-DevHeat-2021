@@ -1,0 +1,152 @@
+{% load static %}
+{% static "images" as img %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/page2.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Find Workout</title>
+</head>
+
+<body class="body">
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                FitHuman
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="{% url 'training' %}" style="color: black;">Training</a></li>
+                <li><a href="{% url 'home' %}">Find Workout</a></li>
+                <li><a href="{% url 'profile' %}" style="color: black;">Profile</a></li>
+                <li><a href="{% url 'logout' %}"
+                    onclick="return confirm('Hey {{user.first_name}}, Are you sure to logout ?');" style="color: black;">Logout</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <!--
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link"  href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: white;" aria-current="page" href="#">Find Workout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="color: blue;" href="#">Training</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" style="color: blue;">Profile</a>
+        </li>
+    </ul>
+    -->
+    <div class="container my-4">
+        <h3 style="color: white;float:right">Hi, {{user.first_name}}</h3>
+    </div>
+    {% for j in lvl %}
+    <div class="photos">
+        <div class="photo">
+            <p>{{j.name}}</p>
+            <hr style="color: white;">
+            <div class="photo-box">
+                {% for i in cat %}
+                {% if i.lvlno == j.id %}
+                <div class="box" onclick="func({{i.id}})">
+                    <img class="img" src="{{img}}/image{{i.id}}.jpg">
+                    <h3 class="first-txt" id="first-txt">
+                        {{i.name}}
+                    </h3>
+                    <h3 class="second-txt">
+                        {{i.description}}
+                    </h3>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+{% endfor %}
+{% for j in cat %}
+    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter{{j.id}}"
+                        id="mybutton{{j.id}}" style="background-color: #222; border-color: #222;display:none">
+
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter{{j.id}}" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content" id="mymodal">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle" id="modal-title"> {{j.name}}
+                                        <br>
+                                        {{j.time}} : {{j.num}} Workout
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+
+                                <div class="modal-body">
+                                    {% for i in ex %}
+                                    {% if i.catid == j.id %}
+                                    <div class="modal-div">
+                                        <div class="gif">
+                                            <img src="{{img}}/gif{{i.id}}.gif">
+                                        </div>
+                                        <div class="name">
+                                            <div class="name-heading"> {{i.name}} </div>
+                                            <div class="name-time"> X{{i.count}} </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+
+ 
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>       
+{% endfor %}                       
+</body>
+<script src="{% static 'js/page2.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</html>

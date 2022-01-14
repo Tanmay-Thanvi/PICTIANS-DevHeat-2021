@@ -1,0 +1,367 @@
+
+.body{
+    background-color:#222;
+}
+.nav-link{
+    color: white;
+}
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+.nav {
+  height: 70px;
+  width: 100%;
+ 
+  background-color: #e33;
+  position: relative;
+  color: white;
+ 
+}
+.nav > .nav-header {
+  display: inline;
+}
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px 10px 10px 20px;
+
+}
+.nav > .nav-btn {
+  display: none;
+}
+.nav > .nav-links {
+  margin-left: auto;
+  display: inline;
+  align-content: space-around;
+
+  float: right;
+  font-size: 18px;
+  height: 50px;
+  border-radius: 2rem;
+}
+.nav > .nav-links > ul li a{
+  display: block;
+ 
+  color: #fff;
+  line-height: 40px;
+  font-size: 18px;
+  text-decoration: none;
+
+}
+.nav > .nav-links > ul{
+  padding: 0;
+  
+  list-style: none;
+  position: relative;
+  
+
+}
+.nav > .nav-links > ul li{
+  display: inline-block;
+  background-color: #e33;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-right: 3rem;
+
+
+}
+.nav > .nav-links > ul li:hover{
+  background-color: #e33;
+  
+    border-radius: 5px;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+ nav .nav-links ul a.icon{
+ margin-left: 80px;
+ margin-right: 10px;
+}
+
+ nav .nav-links ul a i{
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 7px;
+  margin-left: 5px;
+}
+
+.photos
+{   
+  width: 100%;
+  background-color: #222;
+}
+.photo
+{
+  width: 95%;
+  margin:2rem;
+  
+  height: 10%;
+
+}
+.photo h1
+{
+  text-align: center;
+  color: #fff;
+}
+.photo p
+{
+  color: #fff;
+  font-size: 2rem;
+  text-align: left;
+  font-weight: bold;
+}
+.photos .photo-box
+{
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.photos .photo-box div
+{
+  width: 30%;
+  background-color: #222;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: .5s;
+}
+.photos .photo-box div:hover + #first-txt,#second-txt  {
+  opacity: 1;
+  z-index: 2;
+  color: red;
+}
+.photos .photo-box div:hover
+{
+  margin-top: 1rem;
+  opacity: 0.5;
+  color: #eee;
+}
+
+.photos .photo-box div .btn:hover
+{
+  background-color: #e11;
+  
+}
+.img{
+  width: 100%;
+  height: 14rem;
+  border-radius: 1rem;
+  position: relative;
+  padding: 0rem 0.5rem;
+  filter: blur(2px);
+  -webkit-filter: blur(2px)
+}
+.box{
+    position: relative;
+    display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+#box1{
+    width: 20%;
+    height: 10%;
+}
+.box h3{
+    position: absolute;
+}
+.box p{
+    position: absolute;
+}
+
+.first-txt {
+    position: absolute;
+    top: 0.5rem;
+    
+    color: white;
+    font-size: 1.7rem;
+}
+.second-txt {
+    position: absolute;
+    top:3rem;
+    left: 1rem;
+    color: white;
+    font-size: 1.1rem;
+
+}
+#mymodal{
+  height: 40rem;
+  width: 40rem;
+  
+  overflow-y: scroll;
+}
+.modal-div{
+  display: flex;
+  flex-direction: row;
+  
+  height: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top: 0.1rem grey solid;
+  border-bottom: 0.05rem grey solid;
+}
+.gif{
+  width: 12rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.gif img{
+  width: 6rem;
+  height: 4rem;
+
+}
+.name{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width:16rem;
+  
+}
+.name-heading{
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+  
+}
+.name-time{
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 1rem;
+}
+@media (max-width:750px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > ul li a {
+    display: block;
+    width: 100%;
+  }
+
+
+
+
+
+
+
+
+  .nav > .nav-links > ul li{
+    display: block;
+    margin-bottom: 20px;
+    padding: 0;
+    background-color: #333;
+  }
+  .nav > .nav-links > ul li a{
+      margin-left: 40%;
+  }
+  .nav .nav-links ul a.icon{
+    margin-left: 33%;
+  }
+
+  /*   */
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+@media  screen and (max-width: 1246px) {
+  html{
+      font-size: 80%;
+  }
+}
+@media screen and (max-width: 1138px) {
+  html{
+      font-size: 85%;
+  }
+}
+
+@media screen and (max-width: 998px) {
+  html{
+      font-size:80%;
+  }
+}
+@media screen and(max-width: 878px){
+  html{
+      font-size: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  html{
+      font-size:75%;
+  }
+ 
+}
+@media screen and (max-width: 598px) {
+  html{
+      font-size: 70%;
+  }
+  
+  
+}
+@media screen and (max-width: 498px) {
+  html{
+      font-size: 65%;
+  }
+  
+  
+}
+@media screen and (max-width:  420px) {
+  html{
+      font-size: 60%;
+  }
+}
+@media  screen and (max-width: 348px) {
+  html{
+      font-size: 55%;
+  }
+}
+@media  screen and (max-width: 360px) {
+  html{
+      font-size: 50%;
+      
+      
+  }
+  
+}
